@@ -2,7 +2,6 @@ import Link from "next/link";
 import styles from "./Register.module.scss";
 import { useRouter } from "next/router";
 import { FormEvent, useState } from "react";
-import { HtmlContext } from "next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints";
 
 const RegisterView = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,6 +30,8 @@ const RegisterView = () => {
 
     if (result.status === 200) {
       form.reset();
+      console.log(data);
+
       setIsLoading(false);
       push("/auth/login");
     } else {
@@ -47,36 +48,36 @@ const RegisterView = () => {
           <div className={styles.register__form__item}>
             <label htmlFor="email">Email</label>
             <input
-              name="email"
               type="email"
               id="email"
+              name="email"
               className={styles.register__form__item__input}
             />
           </div>
           <div className={styles.register__form__item}>
             <label htmlFor="fullname">Fullname</label>
             <input
-              name="fullname"
               type="text"
               id="fullname"
+              name="fullname"
               className={styles.register__form__item__input}
             />
           </div>
           <div className={styles.register__form__item}>
             <label htmlFor="phone">Phone</label>
             <input
-              name="phone"
               type="text"
               id="phone"
+              name="phone"
               className={styles.register__form__item__input}
             />
           </div>
           <div className={styles.register__form__item}>
             <label htmlFor="password">Password</label>
             <input
-              name="password"
               type="password"
               id="password"
+              name="password"
               className={styles.register__form__item__input}
             />
           </div>
