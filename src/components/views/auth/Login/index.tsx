@@ -62,6 +62,7 @@ const LoginView = () => {
       <div className={styles.login__other}>
         <Button
           type="button"
+          variant="primary"
           className={styles.login__other__button}
           onClick={() => signIn("google", { callbackUrl, redirect: false })}
         >

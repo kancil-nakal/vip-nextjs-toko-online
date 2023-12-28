@@ -47,7 +47,11 @@ const RegisterView = () => {
         <Input label="Fullname" name="fullname" type="text" />
         <Input label="Phone" name="phone" type="number" />
         <Input label="Password" name="password" type="password" />
-        <Button type="submit" className={styles.register__button}>
+        <Button
+          type="submit"
+          variant="primary"
+          className={styles.register__button}
+        >
           {isLoading ? "Loading..." : "Login"}
         </Button>
       </form>
