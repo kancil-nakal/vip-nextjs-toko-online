@@ -27,8 +27,6 @@ const RegisterView = () => {
 
     if (result.status === 200) {
       form.reset();
-      console.log(data);
-
       setIsLoading(false);
       push("/auth/login");
     } else {
