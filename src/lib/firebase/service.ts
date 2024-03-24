@@ -12,8 +12,11 @@ import {
 } from "firebase/firestore";
 import app from "./init";
 import { error } from "console";
+import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
 
 const firestore = getFirestore(app);
+
+const storage = getStorage(app);
 
 export async function retrieveData(collectionName: string) {
   const snapshot = await getDocs(collection(firestore, collectionName));
@@ -94,4 +97,12 @@ export async function deleteData(
     .catch(() => {
       callback(false);
     });
+}
+
+export async function uploadFile(userid: string, file: any) {
+  console.log(file);
+
+  const storageRef = ref(storage, `images/${userid}/${file.name}`);
+  // const uploadTask = uploadBytesResumable(storageRef, file);
+  return true;
 }
